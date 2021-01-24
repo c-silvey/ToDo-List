@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Edit List Item!{% endblock %}
+{% block content %}
+
+<br/>
+<h1>Edit List Item</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <button class="btn btn-danger">Add to List!</button>
+        <a class="btn btn-danger" href="{% url 'home' %}" role="button">View List</a>
+    </div>
+</form>
+
+
+{% endblock %}

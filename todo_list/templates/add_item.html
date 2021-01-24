@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Add Item to List!{% endblock %}
+{% block content %}
+
+<br/>
+<h1>Add Something to To Do!</h1>
+<form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="item" class="form-label">Item</label>
+        <input type="text" class="form-control" id="item" placeholder="Type To-Do Item Here">
+    </div>
+    <div class="mb-3">
+        <label for="person" class="form-label">Person</label>
+        <input type="text" class="form-control" id="person" placeholder="Who is the To-Doer?">
+    </div>
+    <a class="btn btn-danger" href="{% url 'add_item' %}">Add to List!</a>
+    <a class="btn btn-danger" href="{% url 'home' %}" role="button">View List</a>
+</form>
+
+{% endblock %}
